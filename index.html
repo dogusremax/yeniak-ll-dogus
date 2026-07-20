@@ -53,7 +53,59 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 <div class="qb"><button onclick="q(this)">Ofisin adresi nedir?</button><button onclick="q(this)">Bugün nöbetçi kim?</button><button onclick="q(this)">Ofiste su bitti</button><button onclick="q(this)">Kapanış formu nasıl?</button><button onclick="q(this)">Tapu evrakları ne?</button><button onclick="q(this)">Müşteri pahalı diyor</button><button onclick="q(this)">Afiş bastıracağım</button><button onclick="q(this)">PIN'im ne?</button></div></div></div>
 <div class="I"><textarea id="ti" rows="1" placeholder="Sorunuzu yazın..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'"></textarea><button id="sb" onclick="send()">➤</button></div></div>
 <script>
-const KB= + kb_js + ;
+const KB="RE/MAX DOĞUŞ BİLGİ BANKASI (ÖZET)
+
+ŞİRKET: UMT GROUP GAYRİMENKUL, RE/MAX DOĞUŞ
+Adres: Dumlupınar Mah. Özen Sok. Nuhoğlu Yenitepe Sit. 2.Etap A Blok Dükkan 14, Kadıköy/İstanbul
+Tel: 0216 315 15 15 | E-posta: info@remaxdogus.com.tr
+VD: Göztepe | VN: 8920318332 | Yetki Belge: 3402699
+Broker: Umut Tokkuş
+Hizmet: Satılık %2+KDV (her iki taraf), Kiralık 1 aylık kira+KDV
+Şirket Hesabı (Kaparo): NPara TR54 0015 7000 0000 0127 9656 20
+
+NÖBET: 7 kişi döngü: Gamze>Gizem>İrem>Orhan>Evşen>Özlem>Alpay. 23 Tem 2026=Gamze. Hafta sonu yok. Aysun nöbet dışı (sağlık).
+
+PINler: Alpay:2824, Aysun:3847, Evşen:4657, Gamze:3286, Gizem:2679, İrem:9935, Orhan:7912, Özlem:2535, Umut(Broker):1520. Aysun solo PIN yok, Orhan 7912 takım kullanır.
+
+UYGULAMALAR:
+- Kapanış Formu: dogusremax.github.io/kapanis-formu (PIN giriş, işlem kaydet)
+- Matbu Evraklar: dogusremax.github.io/matbu-evraklar (sözleşme/kontrat doldur, yazdır)
+- Portföy Takip: dogusremax.github.io/portfoy-takip (portföy yönet)
+- Müşteri Takip: dogusremax.github.io/musteri-takip (müşteri kayıt, takip notu)
+- Değerleme: dogusremax.github.io/remax-de-erleme (PPTX rapor oluştur)
+- Danışman Takip: Apps Script (Umut'tan link al). İstikrar +2/gün.
+- Kıbrıs Katalog: Apps Script. WhatsApp: kisa.link/YRQLo
+Telefona ekle: Safari>Paylaş>Ana Ekrana Ekle.
+
+OFİS: Hafta içi 09:30-18:00, hafta sonu 10:30-17:00. Gelme zorunluluğu yok (nöbet/org/eğitim hariç).
+AÇILIŞ: Işıklar, sandalyeler dışarı, TV, duvar ışık, bar ışık, kapı aç, bilgisayar, çay (8 poşet).
+KAPANIŞ: TV kapat, çaydanlık kapat, ışıklar kapat, sandalyeler içeri, kilit kontrol.
+
+TEDARİKÇİLER:
+- Basım: Turgut Bey 0535 543 69 98
+- Drone/Video: Ensar Bey 0533 197 34 53
+- Su: Hamidiye 0216 504 52 16 / 0532 360 10 97 (şirket öder)
+- Muameleci Kadıköy: Burak Bey 0537 549 90 00
+- Muameleci Üsküdar: Umut Bey 0532 562 58 6
+
+KAPARO: Min %5, şirket hesabına yatır, makbuz ver. Alıcı vazgeçerse iade yok, satıcı vazgeçerse iade+tazminat.
+
+TAPU: Randevu webtapu veya ALO 181. Satıcı: kimlik+tapu+borcu yoktur+DASK. Alıcı: kimlik. Harç %2+%2.
+TAKYIDAT: e-Devlet > Tapu Bilgileri Sorgulama.
+RAYİÇ BEDEL: Belediye Gelirler Müdürlüğü.
+EKSPERTİZ: Alıcı bankaya başvur, Web Tapu'dan yetki ver, ~15-25K TL.
+
+SÖZLEŞMELER: Satılık/kiralık yetki, alım-satım, kira sözleşmesi. Vazgeçme %4+KDV.
+
+İTİRAZLAR: Pahalı=emsal göster. Komisyon=hizmet değeri+yasal dayanak. Düşüneyim=takip planı. Lokasyon=değer artışı.
+
+1.SUNUM: Tanışma, mülk analizi, fiyat yorumu yapma, 2.sunum randevusu al.
+2.SUNUM: Fiyat analizi, pazarlama planı, yetki sözleşmesi, kapanış.
+
+REMAX: remax.com.tr/account/login, MyREMAX: myremax.remax.com.tr, Akademi: remaxakademim.com (şifre:123).
+REFERRAL: Satış %25, kiralama %12.5, cooperation %50/%50.
+DANIŞMAN ADAYI: yenifikirtepeburada.com/kariyer.html paylaş, Umut Bey ile görüştür.
+GENEL MERKEZ: 0850 888 8769. Eğitim: 0538 574 58 98. Yazılım: 0533 155 34 47.";
 const GK="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";
 const GU="https://api.groq.com/openai/v1/chat/completions";
 let user="",msgs=[];
@@ -63,7 +115,7 @@ const s=document.getElementById("sel"),p=document.getElementById("pin").value;
 if(!s.value){document.getElementById("err").textContent="Danışman seçiniz";return;}
 if(p!==s.value){document.getElementById("err").textContent="PIN hatalı";return;}
 user=s.options[s.selectedIndex].text;
-msgs=[{role:"system",content:"Sen RE/MAX Doğuş ofisinin dijital asistanısın. SADECE aşağıdaki bilgi bankasından cevap ver. Kısa, net, sıcak cevap. Telefon/link/adres varsa aynen ver. Bilgi bankasında yoksa 'Bu konuyu Umut Bey ile görüş' de. Türkçe cevapla.\n\nKonuşan: "+user+"\n\nBİLGİ BANKASI:\n"+KB}];
+msgs=[{role:"system",content:"Sen RE/MAX Doğuş ofisinin dijital asistanısın. SADECE aşağıdaki bilgi bankasından cevap ver. Kısa, net, sıcak cevap. Telefon/link/adres varsa aynen ver. Bilgi bankasında yoksa Bu konuyu Umut Bey ile görüş de. Türkçe cevapla.\n\nKonuşan: "+user+"\n\nBİLGİ BANKASI:\n"+KB}];
 document.getElementById("L").style.display="none";
 document.getElementById("A").style.display="flex";
 document.getElementById("wn").textContent="Merhaba "+user.split(" ")[0]+"!";
