@@ -151,7 +151,7 @@ let history=[];
 
 function searchSections(query) {
   const q = query.toLowerCase().replace(/[?!.,]/g,'');
-  const words = q.split(/\s+/).filter(w=>w.length>2);
+  const words = q.split(/\s+/).filter(w=>w.length>1);
   const scored = SECTIONS.map((s,i) => {
     const txt = (s.title + ' ' + s.content).toLowerCase();
     let score = 0;
@@ -175,9 +175,9 @@ function searchSections(query) {
         'referral':['referral','cooperation','paylaşım','yönlendirme'],
         'karne':['karne','performans','puan','sıralama'],
         'marka':['marka','logo','renk','standart','brand'],
-        'ofis':['ofis','açılış','kapanış','kural','saat','nöbet','su','çay'],
+        'ofis':['ofis','açılış','kapanış','kural','saat','nöbet','su','çay','bitti','içme'],
         'pin':['pin','giriş','şifre','login'],
-        'tedarikçi':['tedarikçi','matbaa','drone','ensar','turgut','su','hamidiye','muameleci'],
+        'tedarikçi':['tedarikçi','matbaa','drone','ensar','turgut','su','hamidiye','muameleci','bitti','sipariş'],
         'takvim':['takvim','calendar','google','bildirim'],
         'hesap':['hesap','iban','banka','npara'],
         'myremax':['myremax','myre','remax sistemi','sistem'],
@@ -204,7 +204,7 @@ function searchSections(query) {
     if (item.score <= 0) break;
     const sec = SECTIONS[item.idx].content;
     const est = sec.length / 3;
-    if (tokenEstimate + est > 3000) break;
+    if (tokenEstimate + est > 1500) break;
     result += sec + '\n\n';
     tokenEstimate += est;
   }
@@ -249,17 +249,22 @@ function showTyping(){
   setTimeout(()=>c.scrollTop=c.scrollHeight,50);
 }
 
+let lastReqTime=0;
 async function sendMessage(){
   const input=document.getElementById("chatInput");
   const text=input.value.trim();
   if(!text)return;
+  const now=Date.now();
+  const wait=30000-(now-lastReqTime);
+  if(wait>0&&lastReqTime>0){addMsg("Lütfen "+(Math.ceil(wait/1000))+" saniye bekle...",false);document.getElementById("sendBtn").disabled=false;return;}
+  lastReqTime=now;
   input.value="";input.style.height="auto";
   document.getElementById("sendBtn").disabled=true;
   addMsg(text,true);
   showTyping();
 
   const relevantKB = searchSections(text);
-  const sysMsg = PERSONA + "\n\nŞu an seninle konuşan: " + currentUser + "\n\nİLGİLİ BİLGİ BANKASI BÖLÜMLERİ:\n" + relevantKB;
+  const sysMsg = "Sen RE/MAX Doğuş ofisinin dijital asistanısın. MUTLAKA aşağıdaki bilgi bankasından cevap ver. Kendi bilgini KULLANMA. Bilgi bankasında yoksa 'Bu konuyu Umut Bey ile görüş' de. Türkçe, kısa ve net cevap ver. Sıcak ama profesyonel ol.\n\nŞu an seninle konuşan: " + currentUser + "\n\nBİLGİ BANKASI:\n" + relevantKB + "\n\nKURAL: Yukarıdaki bilgi bankasında ne yazıyorsa ONU söyle. Telefon numarası, adres, link varsa aynen ver. Bilgi bankası dışından bilgi UYDURMA.";
 
   const msgs = [{role:"system",content:sysMsg}];
   history.push({role:"user",content:text});
