@@ -204,7 +204,7 @@ function searchSections(query) {
     if (item.score <= 0) break;
     const sec = SECTIONS[item.idx].content;
     const est = sec.length / 3;
-    if (tokenEstimate + est > 8000) break;
+    if (tokenEstimate + est > 3000) break;
     result += sec + '\n\n';
     tokenEstimate += est;
   }
@@ -270,7 +270,7 @@ async function sendMessage(){
     const res=await fetch(GROQ_URL,{
       method:"POST",
       headers:{"Content-Type":"application/json","Authorization":"Bearer "+GROQ_KEY},
-      body:JSON.stringify({model:"llama-3.3-70b-versatile",messages:msgs,temperature:0.7,max_tokens:1500})
+      body:JSON.stringify({model:"llama-3.1-8b-instant",messages:msgs,temperature:0.7,max_tokens:1024})
     });
     const data=await res.json();
     const t=document.getElementById("typing");if(t)t.remove();
