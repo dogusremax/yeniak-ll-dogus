@@ -37,6 +37,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 .qb{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .qb button{background:#fff;border:1.5px solid #e0e0e0;border-radius:20px;padding:8px 12px;font-size:12px;color:var(--b);cursor:pointer}
 .qb button:active{border-color:var(--b);background:#f0f4ff}
+.qb2{white-space:nowrap;background:#f0f4ff;border:1px solid #d0d8e8;border-radius:16px;padding:6px 12px;font-size:12px;color:var(--b);cursor:pointer;flex-shrink:0}
+.qb2:active{background:var(--b);color:#fff}
 </style></head><body>
 <div class="L" id="L"><h1>Doğuş Asistan</h1><p>RE/MAX Doğuş Bilgi Bankası</p>
 <div class="lb"><label>Danışman</label>
@@ -46,6 +48,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-seri
 <div class="A" id="A"><div class="h"><span>🏠</span><div class="hi"><div class="hn">Doğuş Asistan</div><div class="hs" id="usr"></div></div><button onclick="location.reload()">✕</button></div>
 <div class="c" id="ch"><div class="W" id="W"><div class="e">🏠</div><h2 id="wn">Merhaba!</h2><p>Sorunuzu yazın, bilgi bankasından cevabını bulayım.</p>
 <div class="qb"><button onclick="q(this)">Bugün nöbetçi kim?</button><button onclick="q(this)">Ofiste su bitti</button><button onclick="q(this)">Kapanış formu</button><button onclick="q(this)">Tapu evrakları</button><button onclick="q(this)">Müşteri pahalı diyor</button><button onclick="q(this)">Afiş bastıracağım</button><button onclick="q(this)">PIN listesi</button><button onclick="q(this)">CapCut nasıl</button><button onclick="q(this)">Matbu evrak</button><button onclick="q(this)">Kaparo</button></div></div></div>
+<div style="padding:6px 12px;background:#fff;display:flex;gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-top:1px solid #eee" id="qbar">
+<button class="qb2" onclick="q(this)">Nöbetçi kim?</button>
+<button class="qb2" onclick="q(this)">Su bitti</button>
+<button class="qb2" onclick="q(this)">Kapanış formu</button>
+<button class="qb2" onclick="q(this)">Tapu evrakları</button>
+<button class="qb2" onclick="q(this)">Pahalı diyor</button>
+<button class="qb2" onclick="q(this)">Afiş bastır</button>
+<button class="qb2" onclick="q(this)">PIN listesi</button>
+<button class="qb2" onclick="q(this)">Kaparo</button>
+<button class="qb2" onclick="q(this)">Matbu evrak</button>
+<button class="qb2" onclick="q(this)">CapCut</button>
+<button class="qb2" onclick="q(this)">Canva</button>
+<button class="qb2" onclick="q(this)">Drone çekim</button>
+<button class="qb2" onclick="q(this)">Instagram</button>
+<button class="qb2" onclick="q(this)">LinkedIn</button>
+<button class="qb2" onclick="q(this)">WhatsApp</button>
+<button class="qb2" onclick="q(this)">Muameleci</button>
+<button class="qb2" onclick="q(this)">Ekspertiz</button>
+<button class="qb2" onclick="q(this)">Kıbrıs</button>
+<button class="qb2" onclick="q(this)">Referral</button>
+<button class="qb2" onclick="q(this)">Ofis saatleri</button>
+</div>
 <div class="I"><textarea id="ti" rows="1" placeholder="Sorunuzu yazın..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'"></textarea><button onclick="send()">➤</button></div></div>
 <script>
 const S=[{t:`ASISTAN KİŞİLİĞİ — UMUT TOKKUŞ GİBİ CEVAP VER`,b:`Sen RE/MAX Doğuş'un dijital asistanısın. Cevaplarını broker Umut Tokkuş'un tarzında ver. Sanki Umut cevap veriyor gibi konuş.
