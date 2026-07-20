@@ -1555,7 +1555,7 @@ Danışman gelme zorunluluğu:
 4. Dışarıdaki sandalyeleri içeri al
 5. Kapının kilitlendiğinden emin ol
 6. Son kontrol yap ve git`,p:`SEN DOLDUR — KALAN EKSİKLER`}];
-const STOP=new Set(` + repr(list(set('bir bu şu ve ile de da mi mı mu mü ben sen biz siz ya hem en olan olarak ama fakat veya diyor dedi ne nasıl nedir yapacağım yapıyorum yapmak yapmalıyım yapayım yapılır hazırlayacağım hazırlıyorum hazırlamak hazırla istiyorum isterim istiyor gerekiyor lazım dolduracağım dolduruyorum doldurmak olmalı olacak nereye nereden nerede kaçta kim kimin açılıyor kapanıyor gerekenler gerekli dosyası dosyasını'.split()))).replace("'",'"').replace('[','').replace(']','') + `".split(",").map(s=>s.trim().replace(/"/g,'')));
+const STOP=new Set(["hazırlayacağım","kaçta","siz","yapacağım","gerekiyor","bir","şu","yapıyorum","mı","hazırla","ya","isterim","nerede","bu","olmalı","dosyası","nereden","mu","ne","hazırlıyorum","ve","doldurmak","olacak","da","gerekenler","dedi","ama","yapmak","yapmalıyım","lazım","mü","sen","fakat","nedir","dolduracağım","diyor","dosyasını","olarak","kim","hazırlamak","gerekli","olan","kapanıyor","nasıl","ile","biz","yapayım","dolduruyorum","de","açılıyor","yapılır","kimin","veya","istiyorum","hem","istiyor","mi","ben","en","nereye"]);
 
 function norm(t){return t.toLowerCase().replace(/İ/g,'i').replace(/I/g,'ı').replace(/\u0130/g,'i').replace(/['']/g,'');}
 function stems(w){
