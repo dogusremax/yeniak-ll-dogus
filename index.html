@@ -6,162 +6,47 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--b:#003DA5;--r:#DC1C2E;--bg:#F0F2F5;--t:#1a1a2e;--t2:#6b7280}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--t);height:100dvh;overflow:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--bg);color:var(--t);height:100dvh;overflow:hidden}
 .L{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;background:linear-gradient(135deg,var(--b),#001d52);padding:24px}
-.L h1{color:#fff;font-size:28px;font-weight:700;margin-bottom:4px}
-.L p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:32px}
+.L h1{color:#fff;font-size:28px;font-weight:700;margin-bottom:4px}.L p{color:rgba(255,255,255,.7);font-size:14px;margin-bottom:32px}
 .lb{background:#fff;border-radius:16px;padding:32px 24px;width:100%;max-width:340px}
 .lb label{display:block;font-size:13px;color:var(--t2);margin-bottom:6px;font-weight:500}
 .lb select,.lb input{width:100%;padding:14px;border:1.5px solid #e0e0e0;border-radius:10px;font-size:16px;margin-bottom:16px;outline:none;background:#fafbfc;-webkit-appearance:none}
 .lb button{width:100%;padding:14px;background:var(--r);color:#fff;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer}
 .le{color:var(--r);font-size:13px;text-align:center;margin-top:8px;min-height:20px}
 .A{display:none;flex-direction:column;height:100dvh}
-.h{background:var(--b);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
-.h span{font-size:20px}.h .hi{flex:1}.h .hn{font-size:16px;font-weight:600}.h .hs{font-size:11px;color:rgba(255,255,255,.7)}
-.h button{background:none;border:none;color:rgba(255,255,255,.7);font-size:22px;cursor:pointer}
-.c{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;-webkit-overflow-scrolling:touch}
+.hd{background:var(--b);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:12px}
+.hd span{font-size:20px}.hd .hi{flex:1}.hd .hn{font-size:16px;font-weight:600}.hd .hs{font-size:11px;color:rgba(255,255,255,.7)}
+.hd button{background:none;border:none;color:rgba(255,255,255,.7);font-size:22px;cursor:pointer}
+.ch{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;-webkit-overflow-scrolling:touch}
 .m{max-width:88%;padding:12px 16px;border-radius:16px;font-size:15px;line-height:1.6;word-wrap:break-word;white-space:pre-wrap;animation:fi .2s}
 @keyframes fi{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .mu{background:var(--b);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
 .mb{background:#fff;color:var(--t);align-self:flex-start;border-bottom-left-radius:4px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
-.typing{align-self:flex-start;background:#fff;padding:12px 18px;border-radius:16px;border-bottom-left-radius:4px}
-.dots{display:flex;gap:4px}
-.dots span{width:8px;height:8px;background:var(--t2);border-radius:50%;animation:bo 1.2s infinite}
-.dots span:nth-child(2){animation-delay:.2s}.dots span:nth-child(3){animation-delay:.4s}
+.tp{align-self:flex-start;background:#fff;padding:14px 20px;border-radius:16px;border-bottom-left-radius:4px}
+.dt{display:flex;gap:4px}.dt span{width:8px;height:8px;background:var(--t2);border-radius:50%;animation:bo 1.2s infinite}
+.dt span:nth-child(2){animation-delay:.2s}.dt span:nth-child(3){animation-delay:.4s}
 @keyframes bo{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
-.I{padding:10px 12px;background:#fff;border-top:1px solid #e8e8e8;display:flex;gap:8px;align-items:flex-end}
-.I textarea{flex:1;padding:12px 16px;border:1.5px solid #e0e0e0;border-radius:22px;font-size:15px;font-family:inherit;resize:none;outline:none;max-height:100px;min-height:44px;line-height:1.4;background:#fafbfc}
-.I textarea:focus{border-color:var(--b)}
-.I button{width:44px;height:44px;background:var(--r);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;flex-shrink:0}
-.I button:active{transform:scale(.9)}
-.I button:disabled{opacity:.4}
-.W{text-align:center;padding:30px 16px;color:var(--t2)}
-.W .e{font-size:48px;margin-bottom:10px}
-.W h2{color:var(--t);font-size:20px;margin-bottom:6px}
-.W p{font-size:14px;line-height:1.5;margin-bottom:14px}
-.qb{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.qb button{background:#fff;border:1.5px solid #e0e0e0;border-radius:20px;padding:8px 12px;font-size:12px;color:var(--b);cursor:pointer}
-.qb button:active{border-color:var(--b);background:#f0f4ff}
+.ip{padding:10px 12px;background:#fff;border-top:1px solid #e8e8e8;display:flex;gap:8px;align-items:flex-end}
+.ip textarea{flex:1;padding:12px 16px;border:1.5px solid #e0e0e0;border-radius:22px;font-size:15px;font-family:inherit;resize:none;outline:none;max-height:100px;min-height:44px;line-height:1.4;background:#fafbfc}
+.ip textarea:focus{border-color:var(--b)}
+.ip button{width:44px;height:44px;background:var(--r);color:#fff;border:none;border-radius:50%;font-size:20px;cursor:pointer;flex-shrink:0}
+.ip button:active{transform:scale(.9)}.ip button:disabled{opacity:.4}
+.W{text-align:center;padding:30px 16px;color:var(--t2)}.W .e{font-size:48px;margin-bottom:10px}.W h2{color:var(--t);font-size:20px;margin-bottom:6px}.W p{font-size:14px;line-height:1.5;margin-bottom:14px}
+.qb{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}.qb button{background:#fff;border:1.5px solid #e0e0e0;border-radius:20px;padding:8px 12px;font-size:12px;color:var(--b);cursor:pointer}.qb button:active{border-color:var(--b);background:#f0f4ff}
 </style></head><body>
-<div class="L" id="L"><h1>Doğuş Asistan</h1><p>RE/MAX Doğuş Bilgi Bankası</p>
-<div class="lb"><label>Danışman</label>
-<select id="sel"><option value="">Seçiniz...</option><option value="2824">Ayşegül Alpay</option><option value="3847">Aysun Yılmaz</option><option value="4657">Evşen Özazman</option><option value="3286">Gamze Yetkin</option><option value="2679">Gizem Gök</option><option value="9935">İrem Aleyna Tetik</option><option value="7912">Orhan Özazman</option><option value="2535">Özlem Varol</option><option value="1520">Umut Tokkuş (Broker)</option></select>
-<label>PIN</label><input type="tel" id="pin" maxlength="4" placeholder="4 haneli PIN" inputmode="numeric">
-<button onclick="doLogin()">Giriş Yap</button><div class="le" id="err"></div></div></div>
-<div class="A" id="A"><div class="h"><span>🏠</span><div class="hi"><div class="hn">Doğuş Asistan</div><div class="hs" id="usr"></div></div><button onclick="location.reload()">✕</button></div>
-<div class="c" id="ch"><div class="W" id="W"><div class="e">🏠</div><h2 id="wn">Merhaba!</h2><p>Sorunuzu yazın, size yardımcı olayım.</p>
-<div class="qb"><button onclick="q(this)">Ofisin adresi nedir?</button><button onclick="q(this)">Bugün nöbetçi kim?</button><button onclick="q(this)">Ofiste su bitti</button><button onclick="q(this)">Kapanış formu nasıl?</button><button onclick="q(this)">Tapu evrakları ne?</button><button onclick="q(this)">Müşteri pahalı diyor</button><button onclick="q(this)">Afiş bastıracağım</button><button onclick="q(this)">PIN'im ne?</button></div></div></div>
-<div class="I"><textarea id="ti" rows="1" placeholder="Sorunuzu yazın..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'"></textarea><button id="sb" onclick="send()">➤</button></div></div>
+<div class="L" id="L"><h1>Doğuş Asistan</h1><p>RE/MAX Doğuş Bilgi Bankası</p><div class="lb"><label>Danışman</label><select id="sel"><option value="">Seçiniz...</option><option value="2824">Ayşegül Alpay</option><option value="3847">Aysun Yılmaz</option><option value="4657">Evşen Özazman</option><option value="3286">Gamze Yetkin</option><option value="2679">Gizem Gök</option><option value="9935">İrem Aleyna Tetik</option><option value="7912">Orhan Özazman</option><option value="2535">Özlem Varol</option><option value="1520">Umut Tokkuş (Broker)</option></select><label>PIN</label><input type="tel" id="pin" maxlength="4" placeholder="4 haneli PIN" inputmode="numeric"><button onclick="doLogin()">Giriş Yap</button><div class="le" id="err"></div></div></div>
+<div class="A" id="A"><div class="hd"><span>🏠</span><div class="hi"><div class="hn">Doğuş Asistan</div><div class="hs" id="usr"></div></div><button onclick="location.reload()">✕</button></div><div class="ch" id="ch"><div class="W" id="W"><div class="e">🏠</div><h2 id="wn">Merhaba!</h2><p>Sorunuzu yazın, size yardımcı olayım.</p><div class="qb"><button onclick="q(this)">Ofisin adresi?</button><button onclick="q(this)">Nöbetçi kim?</button><button onclick="q(this)">Su bitti</button><button onclick="q(this)">Kapanış formu</button><button onclick="q(this)">Tapu evrakları</button><button onclick="q(this)">Pahalı diyor</button><button onclick="q(this)">Afiş bastır</button><button onclick="q(this)">PIN listesi</button></div></div></div><div class="ip"><textarea id="ti" rows="1" placeholder="Sorunuzu yazın..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send()}" oninput="this.style.height='auto';this.style.height=Math.min(this.scrollHeight,100)+'px'"></textarea><button id="sb" onclick="send()">➤</button></div></div>
 <script>
-const KB="RE/MAX DOĞUŞ BİLGİ BANKASI (ÖZET)
-
-ŞİRKET: UMT GROUP GAYRİMENKUL, RE/MAX DOĞUŞ
-Adres: Dumlupınar Mah. Özen Sok. Nuhoğlu Yenitepe Sit. 2.Etap A Blok Dükkan 14, Kadıköy/İstanbul
-Tel: 0216 315 15 15 | E-posta: info@remaxdogus.com.tr
-VD: Göztepe | VN: 8920318332 | Yetki Belge: 3402699
-Broker: Umut Tokkuş
-Hizmet: Satılık %2+KDV (her iki taraf), Kiralık 1 aylık kira+KDV
-Şirket Hesabı (Kaparo): NPara TR54 0015 7000 0000 0127 9656 20
-
-NÖBET: 7 kişi döngü: Gamze>Gizem>İrem>Orhan>Evşen>Özlem>Alpay. 23 Tem 2026=Gamze. Hafta sonu yok. Aysun nöbet dışı (sağlık).
-
-PINler: Alpay:2824, Aysun:3847, Evşen:4657, Gamze:3286, Gizem:2679, İrem:9935, Orhan:7912, Özlem:2535, Umut(Broker):1520. Aysun solo PIN yok, Orhan 7912 takım kullanır.
-
-UYGULAMALAR:
-- Kapanış Formu: dogusremax.github.io/kapanis-formu (PIN giriş, işlem kaydet)
-- Matbu Evraklar: dogusremax.github.io/matbu-evraklar (sözleşme/kontrat doldur, yazdır)
-- Portföy Takip: dogusremax.github.io/portfoy-takip (portföy yönet)
-- Müşteri Takip: dogusremax.github.io/musteri-takip (müşteri kayıt, takip notu)
-- Değerleme: dogusremax.github.io/remax-de-erleme (PPTX rapor oluştur)
-- Danışman Takip: Apps Script (Umut'tan link al). İstikrar +2/gün.
-- Kıbrıs Katalog: Apps Script. WhatsApp: kisa.link/YRQLo
-Telefona ekle: Safari>Paylaş>Ana Ekrana Ekle.
-
-OFİS: Hafta içi 09:30-18:00, hafta sonu 10:30-17:00. Gelme zorunluluğu yok (nöbet/org/eğitim hariç).
-AÇILIŞ: Işıklar, sandalyeler dışarı, TV, duvar ışık, bar ışık, kapı aç, bilgisayar, çay (8 poşet).
-KAPANIŞ: TV kapat, çaydanlık kapat, ışıklar kapat, sandalyeler içeri, kilit kontrol.
-
-TEDARİKÇİLER:
-- Basım: Turgut Bey 0535 543 69 98
-- Drone/Video: Ensar Bey 0533 197 34 53
-- Su: Hamidiye 0216 504 52 16 / 0532 360 10 97 (şirket öder)
-- Muameleci Kadıköy: Burak Bey 0537 549 90 00
-- Muameleci Üsküdar: Umut Bey 0532 562 58 6
-
-KAPARO: Min %5, şirket hesabına yatır, makbuz ver. Alıcı vazgeçerse iade yok, satıcı vazgeçerse iade+tazminat.
-
-TAPU: Randevu webtapu veya ALO 181. Satıcı: kimlik+tapu+borcu yoktur+DASK. Alıcı: kimlik. Harç %2+%2.
-TAKYIDAT: e-Devlet > Tapu Bilgileri Sorgulama.
-RAYİÇ BEDEL: Belediye Gelirler Müdürlüğü.
-EKSPERTİZ: Alıcı bankaya başvur, Web Tapu'dan yetki ver, ~15-25K TL.
-
-SÖZLEŞMELER: Satılık/kiralık yetki, alım-satım, kira sözleşmesi. Vazgeçme %4+KDV.
-
-İTİRAZLAR: Pahalı=emsal göster. Komisyon=hizmet değeri+yasal dayanak. Düşüneyim=takip planı. Lokasyon=değer artışı.
-
-1.SUNUM: Tanışma, mülk analizi, fiyat yorumu yapma, 2.sunum randevusu al.
-2.SUNUM: Fiyat analizi, pazarlama planı, yetki sözleşmesi, kapanış.
-
-REMAX: remax.com.tr/account/login, MyREMAX: myremax.remax.com.tr, Akademi: remaxakademim.com (şifre:123).
-REFERRAL: Satış %25, kiralama %12.5, cooperation %50/%50.
-DANIŞMAN ADAYI: yenifikirtepeburada.com/kariyer.html paylaş, Umut Bey ile görüştür.
-GENEL MERKEZ: 0850 888 8769. Eğitim: 0538 574 58 98. Yazılım: 0533 155 34 47.";
-const GK="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";
-const GU="https://api.groq.com/openai/v1/chat/completions";
-let user="",msgs=[];
-
-function doLogin(){
-const s=document.getElementById("sel"),p=document.getElementById("pin").value;
-if(!s.value){document.getElementById("err").textContent="Danışman seçiniz";return;}
-if(p!==s.value){document.getElementById("err").textContent="PIN hatalı";return;}
-user=s.options[s.selectedIndex].text;
-msgs=[{role:"system",content:"Sen RE/MAX Doğuş ofisinin dijital asistanısın. SADECE aşağıdaki bilgi bankasından cevap ver. Kısa, net, sıcak cevap. Telefon/link/adres varsa aynen ver. Bilgi bankasında yoksa Bu konuyu Umut Bey ile görüş de. Türkçe cevapla.\n\nKonuşan: "+user+"\n\nBİLGİ BANKASI:\n"+KB}];
-document.getElementById("L").style.display="none";
-document.getElementById("A").style.display="flex";
-document.getElementById("wn").textContent="Merhaba "+user.split(" ")[0]+"!";
-document.getElementById("usr").textContent=user;
-document.getElementById("ti").focus();}
-
+var KB="RE/MAX DOGUS BILGI BANKASI\n\nSIRKET: UMT GROUP GAYRIMENKUL, RE/MAX DOGUS\nAdres: Dumlupinar Mah. Ozen Sok. Nuhoglu Yenitepe Sit. 2.Etap A Blok Dukkan 14, Kadikoy/Istanbul\nTel: 0216 315 15 15 | E-posta: info@remaxdogus.com.tr\nVD: Goztepe | VN: 8920318332 | Yetki Belge: 3402699\nBroker: Umut Tokkus\nHizmet: Satilik %2+KDV (her iki taraf), Kiralik 1 aylik kira+KDV\nSirket Hesabi (Kaparo): NPara TR54 0015 7000 0000 0127 9656 20\nNOBET: 7 kisi dongu: Gamze-Gizem-Irem-Orhan-Evsen-Ozlem-Alpay. 23 Tem 2026=Gamze. Hafta sonu yok. Aysun nobet disi.\nPINler: Alpay:2824, Aysun:3847, Evsen:4657, Gamze:3286, Gizem:2679, Irem:9935, Orhan:7912, Ozlem:2535, Umut(Broker):1520\nUYGULAMALAR: Kapanis Formu: dogusremax.github.io/kapanis-formu | Matbu Evraklar: dogusremax.github.io/matbu-evraklar | Portfoy Takip: dogusremax.github.io/portfoy-takip | Musteri Takip: dogusremax.github.io/musteri-takip | Degerleme: dogusremax.github.io/remax-de-erleme | Danisman Takip ve Kibris Katalog: Apps Script Umut'tan link al | yenifikirtepeburada.com\nTelefona ekle: Safari-Paylas-Ana Ekrana Ekle\nOFIS: Hafta ici 09:30-18:00, hafta sonu 10:30-17:00. Gelme zorunlulugu yok (nobet/org/egitim haric).\nACILIS: Isiklar, sandalyeler disari, TV, duvar isik, bar isik, kapi ac, bilgisayar, cay (8 poset cay).\nKAPANIS: TV kapat, caydanlik kapat, isiklar kapat, sandalyeler iceri, kilit kontrol.\nTEDARIKCILER: Basim/Afis: Turgut Bey 0535 543 69 98 | Drone/Video: Ensar Bey 0533 197 34 53 | Su: Hamidiye 0216 504 52 16 veya 0532 360 10 97 (sirket oder) | Muameleci Kadikoy: Burak Bey 0537 549 90 00 | Muameleci Uskudar: Umut Bey 0532 562 58 6\nKAPARO: Min %5 sirket hesabina yatir, makbuz ver. Alici vazgecerse iade yok, satici vazgecerse iade+tazminat.\nTAPU: Randevu webtapu.tkgm.gov.tr veya ALO 181. Satici: kimlik+tapu+borcu yoktur+DASK. Alici: kimlik. Harc %2+%2.\nTAKYIDAT: e-Devlet Tapu Bilgileri Sorgulama. RAYIC: Belediye Gelirler Mudurlugu. EKSPERTIZ: Alici bankaya basvur, Web Tapu'dan yetki ver, 15-25K TL.\nSOZLESMELER: Matbu Evraklar uygulamasindan doldurulur. Satilik/kiralik yetki, alim-satim, kira sozlesmesi. Vazgecme %4+KDV.\nITIRAZLAR: Pahali=emsal goster. Komisyon=hizmet degeri+yasal dayanak. Dusuneyim=takip plani. Lokasyon=deger artisi.\n1.SUNUM: Tanisma, mulk analizi, fiyat yorumu yapma, 2.sunum randevusu al.\n2.SUNUM: Fiyat analizi, pazarlama plani, yetki sozlesmesi, kapanis.\nREMAX: remax.com.tr/account/login | MyREMAX: myremax.remax.com.tr | Akademi: remaxakademim.com (sifre:123)\nREFERRAL: Satis %25, kiralama %12.5, cooperation %50/%50.\nDANISMAN ADAYI: yenifikirtepeburada.com/kariyer.html paylas, Umut Bey ile gorustur.\nGENEL MERKEZ: 0850 888 8769 | Egitim: 0538 574 58 98 | Yazilim: 0533 155 34 47\nCapCut: Video duzenleme. Canva: Gorsel tasarim. ChatGPT: Fotograf duzenleme, ilan metni. NotebookLM: Rapor/sunum.\nInstagram: Isletme hesabi. WhatsApp Business: Otomatik mesaj, etiketleme. LinkedIn: Profesyonel profil. Linktree: Bio link.\nSahibinden: sahibinden.com ilan ver, min 10 fotograf.\nKIBRIS: Yabanci 1 donum max, Bakanlar Kurulu izni, GBP/USD bazli, %6-8 kira getirisi.";
+var GK="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";
+var GU="https://api.groq.com/openai/v1/chat/completions";
+var user="",msgs=[];
+function doLogin(){var s=document.getElementById("sel"),p=document.getElementById("pin").value,e=document.getElementById("err");if(!s.value){e.textContent="Danışman seçiniz";return;}if(p!==s.value){e.textContent="PIN hatalı";return;}user=s.options[s.selectedIndex].text;msgs=[{role:"system",content:"Sen RE/MAX Dogus ofisinin dijital asistanisin. SADECE asagidaki bilgi bankasindan cevap ver. Kisa, net, sicak cevap ver. Telefon, link, adres varsa aynen ver. Bilgi bankasinda yoksa Bu konuyu Umut Bey ile gorus de. Turkce cevapla. Konusan kisi: "+user+"\nBILGI BANKASI:\n"+KB}];document.getElementById("L").style.display="none";document.getElementById("A").style.display="flex";document.getElementById("wn").textContent="Merhaba "+user.split(" ")[0]+"!";document.getElementById("usr").textContent=user;document.getElementById("ti").focus();}
 function q(b){document.getElementById("ti").value=b.textContent;send();}
-function addMsg(t,u){
-const w=document.getElementById("W");if(w)w.style.display="none";
-const d=document.createElement("div");d.className="m "+(u?"mu":"mb");d.textContent=t;
-document.getElementById("ch").appendChild(d);
-setTimeout(()=>document.getElementById("ch").scrollTop=99999,50);}
-
-function showTyping(){
-const d=document.createElement("div");d.className="typing";d.id="typ";
-d.innerHTML='<div class="dots"><span></span><span></span><span></span></div>';
-document.getElementById("ch").appendChild(d);
-setTimeout(()=>document.getElementById("ch").scrollTop=99999,50);}
-
-async function send(){
-const ti=document.getElementById("ti"),txt=ti.value.trim();
-if(!txt)return;ti.value="";ti.style.height="auto";
-document.getElementById("sb").disabled=true;
-addMsg(txt,true);showTyping();
-msgs.push({role:"user",content:txt});
-try{
-const r=await fetch(GU,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+GK},
-body:JSON.stringify({model:"llama-3.1-8b-instant",messages:msgs,temperature:0.3,max_tokens:800})});
-const d=await r.json();
-const t=document.getElementById("typ");if(t)t.remove();
-if(d.choices&&d.choices[0]){
-const reply=d.choices[0].message.content;
-msgs.push({role:"assistant",content:reply});
-addMsg(reply,false);
-if(msgs.length>8){const sys=msgs[0];msgs=[sys,...msgs.slice(-6)];}
-}else if(d.error){
-if(d.error.message.includes('Rate limit')||d.error.message.includes('rate')){
-addMsg("⏳ Çok hızlı sordun, 30 saniye bekle ve tekrar dene.",false);
-}else{addMsg("Hata: "+d.error.message,false);}
-}else{addMsg("Cevap alınamadı, tekrar dene.",false);}
-}catch(e){
-const t=document.getElementById("typ");if(t)t.remove();
-addMsg("Bağlantı hatası. İnternet bağlantını kontrol et.",false);}
-document.getElementById("sb").disabled=false;
-document.getElementById("ti").focus();}
-
+function addMsg(t,u){var w=document.getElementById("W");if(w)w.style.display="none";var d=document.createElement("div");d.className="m "+(u?"mu":"mb");d.textContent=t;document.getElementById("ch").appendChild(d);setTimeout(function(){document.getElementById("ch").scrollTop=99999},50);}
+function showT(){var d=document.createElement("div");d.className="tp";d.id="typ";d.innerHTML="<div class=dt><span></span><span></span><span></span></div>";document.getElementById("ch").appendChild(d);setTimeout(function(){document.getElementById("ch").scrollTop=99999},50);}
+async function send(){var ti=document.getElementById("ti"),txt=ti.value.trim();if(!txt)return;ti.value="";ti.style.height="auto";document.getElementById("sb").disabled=true;addMsg(txt,true);showT();msgs.push({role:"user",content:txt});try{var r=await fetch(GU,{method:"POST",headers:{"Content-Type":"application/json","Authorization":"Bearer "+GK},body:JSON.stringify({model:"llama-3.1-8b-instant",messages:msgs,temperature:0.3,max_tokens:800})});var d=await r.json();var t=document.getElementById("typ");if(t)t.remove();if(d.choices&&d.choices[0]){var reply=d.choices[0].message.content;msgs.push({role:"assistant",content:reply});addMsg(reply,false);if(msgs.length>8){var sys=msgs[0];msgs=[sys].concat(msgs.slice(-6));}}else{addMsg("30 saniye bekle tekrar dene.",false);}}catch(ex){var t=document.getElementById("typ");if(t)t.remove();addMsg("Baglanti hatasi.",false);}document.getElementById("sb").disabled=false;document.getElementById("ti").focus();}
 document.getElementById("pin").addEventListener("input",function(){this.value=this.value.replace(/[^0-9]/g,"");});
 document.getElementById("pin").addEventListener("keydown",function(e){if(e.key==="Enter")doLogin();});
 </script></body></html>
