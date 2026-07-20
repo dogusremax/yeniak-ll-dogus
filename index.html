@@ -347,9 +347,11 @@ function doSearch(){
     words.forEach(w=>{
       // Exact word match
       if(txt.includes(w)) score+=3;
+      else if(w.length>=4 && txt.includes(w.substring(0,w.length-1))) score+=2;
+      else if(w.length>=5 && txt.includes(w.substring(0,w.length-2))) score+=1;
       // Partial match
       const variations={
-        'su':['su','hamidiye','suyu','suyunu','içme'],
+        'su':['su','hamidiye','suyu','suyunu','içme','bitince','sipariş','söyle','ofis suyu','damacana'],
         'nöbet':['nöbet','nöbetçi','nobetci','görev','döngü'],
         'kapanış':['kapanış','kapanis','kapaniş','kapanıs'],
         'tapu':['tapu','devir','harç','takyidat','rayiç','ekspertiz','eksper'],
@@ -370,7 +372,7 @@ function doSearch(){
         'marka':['marka','logo','renk','standart','brand'],
         'ofis':['ofis','açılış','kapanış prosedür','kural','çalışma saat'],
         'pin':['pin','giriş','şifre','login'],
-        'tedarikçi':['tedarikçi','matbaa','turgut','drone','ensar','hamidiye','muameleci','burak bey'],
+        'tedarikçi':['tedarikçi','matbaa','turgut','drone','ensar','hamidiye','muameleci','burak bey','sipariş','bitti','bitince','söyle'],
         'takvim':['takvim','calendar','bildirim','google takvim'],
         'hesap':['hesap','iban','banka','npara'],
         'myremax':['myremax','myre','remax sistemi','sistem'],
