@@ -375,7 +375,12 @@ function doSearch(){
   });
 
   scored.sort((a,b)=>b.score-a.score);
-  const results=scored.filter(s=>s.score>0).slice(0,5);
+  const top=scored.filter(s=>s.score>0);
+  if(!top.length){var results=[];}
+  else{
+    const best=top[0].score;
+    var results=top.filter(s=>s.score>=best*0.6).slice(0,3);
+  }
   
   const container=document.getElementById("results");
   // Remove old cards
